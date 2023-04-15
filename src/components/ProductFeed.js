@@ -21,7 +21,7 @@ const ProductFeed = ({ products }) => {
         ))}
       <div className="md:col-span-full overflow-hidden rounded-md mx-4">
         <Image
-          className="rounded-md hover:scale-105 transition transform duration-300 ease-out mx-auto"
+          className="rounded-md hover:scale-105 transition transform duration-300 ease-out mx-auto h-28 sm:h-full"
           src="https://links.papareact.com/dyz"
           width="1600"
           height="800"
