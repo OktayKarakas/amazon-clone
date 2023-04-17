@@ -15,13 +15,18 @@ const ProductFeed = ({ products }) => {
         entries[0].isIntersecting &&
         products.length >= initial_products_slice_number
       ) {
-        set_initial_products_slice_number((prevEl) => prevEl + 6);
+        set_initial_products_slice_number((prevEl) => {
+          const remainingProducts = products.length - prevEl;
+          const increment = remainingProducts >= 6 ? 6 : remainingProducts;
+          return prevEl + increment;
+        });
       }
     });
     if (e) {
       observer.current.observe(e);
     }
   });
+
   return (
     <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-52 mx-auto">
       {products
