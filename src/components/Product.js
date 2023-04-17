@@ -1,8 +1,10 @@
+import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { uuid } from "uuidv4";
 import Currency from "react-currency-formatter";
+
 const Product = ({
   id,
   title,
@@ -12,7 +14,9 @@ const Product = ({
   image,
   rating,
 }) => {
+  const [isImageReady, setIsImageReady] = useState(false);
   const [hasPrime] = useState(Math.random() < 0.5);
+
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10 shadow-lg">
       <p className="absolute top-2 right-2 text-xs italic">{category}</p>
